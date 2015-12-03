@@ -1,0 +1,30 @@
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+			"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+	<!-- byType -->
+<!-- 	<bean id="e1" class="beans.Engine"> -->
+<!-- 		<property name="model" value="2016"></property> -->
+<!-- 	</bean> -->
+<!-- 	<bean id="e2" class="beans.Engine" autowire-candidate="false"> -->
+<!-- 		<property name="model" value="2000" ></property> -->
+<!-- 	</bean> -->
+<!-- 	<bean id="c" class="beans.Car" autowire="byType"> -->
+<!-- 	</bean> -->
+
+	<!-- in case of byType there is a chance to get ambiguty -->
+	<!-- by name -->
+	<bean id="engine" class="beans.Engine">
+		<property name="model" value="2016"></property>
+	</bean>
+	<bean id="e2" class="beans.Engine">
+		<property name="model" value="2016"></property>
+	</bean>
+	<bean id="c" class="beans.Car" autowire="byName">
+	</bean>
+
+	<!-- in case of byName, bean is should match di parametter name -->
+
+
+
+</beans>

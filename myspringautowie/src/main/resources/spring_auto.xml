@@ -1,0 +1,19 @@
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+			"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+	<!-- autodetect(type) -->
+	<bean id="engine" class="beans.Engine">
+		<property name="model" value="2016"></property>
+	</bean>
+	<bean id="e2" class="beans.Engine" autowire-candidate="false">
+		<property name="model" value="2016"></property>
+	</bean>
+	<bean id="b" class="beans.Bus" autowire="autodetect">
+	</bean>
+
+	<!-- in case of byName, bean is should match di parametter name -->
+
+
+
+</beans>

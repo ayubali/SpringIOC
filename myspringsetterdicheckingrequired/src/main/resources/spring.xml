@@ -1,0 +1,21 @@
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+			"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+	<!-- to activate required anotation -->
+	<bean
+		class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"></bean>
+	<!-- oracle connection -->
+	<bean id="daobean" class="beans.DAO" dependency-check="simple">
+		<property name="driver" value="driveroracle"></property>
+		<property name="url" value="urloracle"></property>
+		<property name="user" value="user"></property>
+		<property name="password" value="password"></property>
+	</bean>
+	<!-- mysql connection -->
+	<bean id="daobean1" class="beans.DAO">
+		<property name="driver" value="drivermysql"></property>
+		<property name="url" value="urlmysql"></property>
+	</bean>
+
+
+</beans>

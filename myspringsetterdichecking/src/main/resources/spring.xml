@@ -1,0 +1,27 @@
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+			"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+	<!-- <bean id="carbean" class="beans.Car" dependency-check="none"> -->
+	<!-- no need to call setter -->
+	<!-- </bean> -->
+
+	<!-- <bean id="carbean" class="beans.Car" dependency-check="simple"> -->
+	<!-- we must need to call primitive setter -->
+	<!-- <property name="name" value="BMW"></property> -->
+	<!-- </bean> -->
+
+	<!-- <bean id="carbean" class="beans.Car" dependency-check="objects"> -->
+	<!-- we must need to call secondary setter -->
+	<!-- <property name="engine" ref="enginebean"></property> -->
+	<!-- </bean> -->
+
+	<bean id="carbean" class="beans.Car" dependency-check="all">
+		<!-- we must need to call secondary setter -->
+		<property name="engine" ref="enginebean"></property>
+		<property name="name" value="BMW"></property>
+	</bean>
+
+	<bean id="enginebean" class="beans.Engine">
+		<property name="model" value="2016"></property>
+	</bean>
+</beans>
